@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Home /> renders 1`] = `
+<div>
+  <main
+    class="flex flex-col justify-content-center items-center"
+  >
+    <h1
+      class="text-4xl font-bold text-lgg"
+    >
+      Welcome
+    </h1>
+    <h2
+      class="text-2xl mb-4 text-lightg"
+    >
+      to the Nice & Sandy Cookbook!
+    </h2>
+    <p
+      class="text-medg"
+    >
+      Categories are listed below:
+    </p>
+  </main>
+</div>
+`;

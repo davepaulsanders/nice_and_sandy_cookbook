@@ -1,7 +1,7 @@
 interface ActionsProps {
 	label: string;
 	type: "link" | "button";
-	button?: {type: string, action: string}
+	button?: {type: "submit" | "button", action: string}
 	href: string;
 	onClick?: (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => void;
 	}
