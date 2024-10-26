@@ -2,9 +2,10 @@ interface ActionsProps {
 	label: string;
 	type: "link" | "button";
 	button?: {type: string, action: string}
-	onClick: (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => void;
+	href: string;
+	onClick?: (e: React.MouseEvent<HTMLButtonElement> | React.MouseEvent<HTMLAnchorElement>) => void;
 	}
-const Actions = ({label, button, type, onClick}: ActionsProps) => {
+const Actions = ({label, type, button, href, onClick}: ActionsProps) => {
 	if (type === "button" && button) {
 	return (
 		<button className={`hover:cursor-pointer text-xl ${button.action === "submit" ? "bg-medg hover:bg-lgg" : "bg-deleteColor hover:bg-deleteColorHover"} \
@@ -12,7 +13,7 @@ const Actions = ({label, button, type, onClick}: ActionsProps) => {
 		)
 		} else {
 			return (
-				<a onClick={onClick} className="text-xl hover:underline hover:cursor-pointer">{label}</a>
+				<a target="_blank" href={href} rel="noopener noreferrer" className="text-xl hover:underline hover:cursor-pointer">{label}</a>
 			)
 		}
 		

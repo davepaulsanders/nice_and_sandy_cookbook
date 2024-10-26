@@ -8,4 +8,4 @@ const meta: Meta<typeof CardContent> = {
  
 export default meta;
 type Story = StoryObj<typeof CardContent>;
-export const Card: Story = {args: {label: "TikTok Pasta", onClick: ()=> window.location.replace("www.google.com")}}
+export const Card: Story = {args: {cardContent: {label: "TikTok Pasta", href: "https://www.delish.com/cooking/recipe-ideas/a35421563/baked-feta-pasta-tiktok/"}}}

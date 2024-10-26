@@ -8,4 +8,4 @@ const meta: Meta<typeof CardHeader> = {
  
 export default meta;
 type Story = StoryObj<typeof CardHeader>;
-export const Card: Story = {args: {src: "https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg", alt: "test"}};
+export const Card: Story = {args: {headerContent: {img: "https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg", alt: "test"}}};
