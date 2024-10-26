@@ -1,0 +1,51 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<RecipeCard /> as link renders 1`] = `
+<div>
+  <div
+    class="flex flex-col justify-content-center \\   items-center min-w-[20rem] max-w-[30rem] min-h-[20rem] shadow-lg rounded-md"
+  >
+    <div
+      class="w-11/12"
+    >
+      <img
+        class="h-[27rem] w-full object-cover"
+      />
+    </div>
+    <div
+      class="m-4"
+    >
+      <a
+        class="text-xl hover:underline hover:cursor-pointer"
+        rel="noopener noreferrer"
+        target="_blank"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<RecipeCard /> as submit button renders 1`] = `
+<div>
+  <div
+    class="flex flex-col justify-content-center \\   items-center min-w-[20rem] max-w-[30rem] min-h-[20rem] shadow-lg rounded-md"
+  >
+    <div
+      class="w-11/12"
+    >
+      <img
+        class="h-[27rem] w-full object-cover"
+      />
+    </div>
+    <div
+      class="m-4"
+    >
+      <a
+        class="text-xl hover:underline hover:cursor-pointer"
+        rel="noopener noreferrer"
+        target="_blank"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -34,14 +34,3 @@ exports[`<Actions /> as submit button renders 1`] = `
   </button>
 </div>
 `;
-
-exports[`<Actions /> as submit button renders 2`] = `
-<div>
-  <button
-    class="hover:cursor-pointer text-xl bg-deleteColor hover:bg-deleteColorHover 			hover:text-slate-200 py-3 px-10 rounded-md"
-    type="button"
-  >
-    test
-  </button>
-</div>
-`;
