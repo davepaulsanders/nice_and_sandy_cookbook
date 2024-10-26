@@ -32,7 +32,7 @@ test('<Actions /> as delete button renders', () => {
 	expect(container).toMatchSnapshot()
 })
 test('<Actions /> sends onClick', async () => {
-	const { container } = render(
+	render(
         <Actions 
             label="test" 
             button={{ type: "button", action: "delete" }} 

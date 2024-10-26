@@ -1,10 +1,9 @@
 import Actions from "../Actions/Actions"
 interface CardContentProps {
 	label: string;
-	onClick: () => void;
 	[key: string]: any;
 }
-const CardContent = ({label, href, ...cardContent}: CardContentProps) => {
+const CardContent = ({label, href, ..._rest }: CardContentProps) => {
 	return (
 		<div className="m-4">
 		<Actions label={label} href={href} type="link" />
