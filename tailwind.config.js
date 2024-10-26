@@ -17,9 +17,11 @@ export default {
   ],
  theme: {
 	 extend: {
-		 colors: colors
-	},
-
+		 colors: colors,
+		 boxShadow: { 
+			 lg: "rgba(0, 0, 0, 0.16) 0px 1px 4px"
+		}
+      }
   },
   plugins: [],
 }

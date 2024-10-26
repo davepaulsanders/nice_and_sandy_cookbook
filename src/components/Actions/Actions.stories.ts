@@ -12,16 +12,23 @@ type Story = StoryObj<typeof Actions>;
 export const SubmitAction: Story = {
   args: {
     label: 'Add recipe',
-	action: 'submit',
-	type: "submit",
+	button: {type: "submit", action: "submit"},
+	type: "button",
 	onClick: fn()
   },
 };
 export const DeleteAction: Story = {
   args: {
     label: 'Remove recipe',
-	action: 'delete',
-	type: "submit",
+	button: {type: "delete", action: "delete"},
+	type: "button",
+	onClick: fn()
+}
+};
+export const Link: Story = {
+  args: {
+    label: 'TikTok Pasta',
+	type: "link",
 	onClick: fn()
 }
 };
