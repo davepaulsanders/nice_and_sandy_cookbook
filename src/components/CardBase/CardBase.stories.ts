@@ -8,7 +8,4 @@ const meta: Meta<typeof CardBase> = {
  
 export default meta;
 type Story = StoryObj<typeof CardBase>;
-export const Card: Story = {
-  args: {
-  },
-};
+export const Card: Story = {};
