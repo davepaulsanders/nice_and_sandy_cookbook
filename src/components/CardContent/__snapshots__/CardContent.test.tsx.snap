@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<CardContent /> renders 1`] = `
+<div>
+  <div
+    class="m-4"
+  >
+    <a
+      class="text-xl hover:underline hover:cursor-pointer"
+      rel="noopener noreferrer"
+      target="_blank"
+    />
+  </div>
+</div>
+`;
