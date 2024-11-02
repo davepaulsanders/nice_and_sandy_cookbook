@@ -1,10 +1,11 @@
+import { ReactElement } from "react"
 import Wrapper from "./Wrapper" 
 import RecipeCard from "../RecipeCard/RecipeCard" 
 import { expect, test } from 'vitest'
 import { screen, render } from '@testing-library/react'
 import '@testing-library/dom'
 
-const children: ReactNode[] = []
+const children: ReactElement[] = []
 for (let i = 0; i < 10; i++) {
 	children.push(<RecipeCard 
 	img="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"

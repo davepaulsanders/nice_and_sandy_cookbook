@@ -1,3 +1,4 @@
+import { ReactElement } from "react"
 import type { Meta, StoryObj } from '@storybook/react';
  
 import Wrapper from './Wrapper';
@@ -8,7 +9,7 @@ const meta: Meta<typeof Wrapper> = {
 };
 
 
-const children: ReactNode[] = []
+const children: ReactElement[] = []
 for (let i = 0; i < 10; i++) {
 	children.push(<RecipeCard 
 	img="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"

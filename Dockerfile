@@ -10,7 +10,7 @@ COPY . .
 CMD [""]
 
 FROM base AS build
-RUN npm run build
+RUN pnpm run build
 
 FROM nginx:latest
 COPY --from=build /app/dist /usr/share/nginx/html
