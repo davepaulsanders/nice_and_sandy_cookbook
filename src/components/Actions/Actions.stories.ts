@@ -20,7 +20,7 @@ export const SubmitAction: Story = {
 export const DeleteAction: Story = {
   args: {
     label: 'Remove recipe',
-	button: {type: "delete", action: "delete"},
+	button: {type: "button", action: "delete"},
 	type: "button",
 	onClick: fn()
 }

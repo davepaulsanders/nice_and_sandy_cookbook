@@ -1,10 +1,8 @@
 import RecipeCard from "./RecipeCard" 
 import { expect, test } from 'vitest'
-import {render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import {render } from '@testing-library/react'
 import '@testing-library/dom'
-import { vi } from 'vitest'
-const mockFunc = vi.fn()
+
 test('<RecipeCard /> as link renders', () => {
 	const { container } = render(<RecipeCard label="test" type="link" href="www.google.com"/>)
 	expect(container).toMatchSnapshot()

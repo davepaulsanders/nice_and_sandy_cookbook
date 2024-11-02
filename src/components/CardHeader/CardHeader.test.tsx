@@ -1,7 +1,6 @@
 import CardHeader from "./CardHeader" 
 import { expect, test } from 'vitest'
-import {render, screen} from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import {render, } from '@testing-library/react'
 import '@testing-library/dom'
 
 test('<CardHeader /> renders', () => {

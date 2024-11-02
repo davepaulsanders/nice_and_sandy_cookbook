@@ -17,9 +17,12 @@ exports[`<RecipeCard /> as link renders 1`] = `
     >
       <a
         class="text-xl hover:underline hover:cursor-pointer"
+        href="www.google.com"
         rel="noopener noreferrer"
         target="_blank"
-      />
+      >
+        test
+      </a>
     </div>
   </div>
 </div>
@@ -34,7 +37,9 @@ exports[`<RecipeCard /> as submit button renders 1`] = `
       class="w-11/12"
     >
       <img
+        alt="test"
         class="h-[27rem] w-full object-cover"
+        src="https://fastly.picsum.photos/id/454/200/300.jpg?hmac=wGXBDB3HURz2isRdLrgggeWdD1yO3rdX4B3-jlzRncg"
       />
     </div>
     <div
@@ -42,9 +47,12 @@ exports[`<RecipeCard /> as submit button renders 1`] = `
     >
       <a
         class="text-xl hover:underline hover:cursor-pointer"
+        href="https://www.feastingathome.com/vegan-fajitas/"
         rel="noopener noreferrer"
         target="_blank"
-      />
+      >
+        test
+      </a>
     </div>
   </div>
 </div>

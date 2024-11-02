@@ -1,9 +1,8 @@
 interface CardHeaderProps {
-	src: string;
+	img: string;
 	alt: string;
-	[key: string]: any;
 	}
-const CardHeader = ({img, alt, ...headerContent}: CardHeaderProps) => {
+const CardHeader = ({ img, alt, ..._rest }: CardHeaderProps) => {
 	return (
 		<div className="w-11/12">
 		<img className="h-[27rem] w-full object-cover" 
