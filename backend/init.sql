@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS recipes (
     label TEXT NOT NULL,
     alt TEXT NOT NULL,
 	category_id INTEGER,
+	is_pinned BOOLEAN,
     FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
