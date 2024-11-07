@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS recipes (
     FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
-
 CREATE TABLE IF NOT EXISTS categories (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     category TEXT NOT NULL
