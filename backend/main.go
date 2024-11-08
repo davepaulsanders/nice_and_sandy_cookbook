@@ -13,6 +13,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	err = loadData(db)
+	if err != nil {
+		log.Fatal(err)
+	}
 	defer db.Close()
   r := gin.Default()
   r.GET("/healthz", func(c *gin.Context) {
