@@ -78,5 +78,33 @@ func main() {
                         "recipes": recipes,
                 })
         })
+        r.GET("/recipes/pinned", func(c *gin.Context) {
+
+                type Recipe struct {
+                        Id         int            `json:"id"`
+                        Img        sql.NullString `json:"img"`
+                        Href       sql.NullString `json:"href"`
+                        Label      string         `json:"label"`
+                        Alt        string         `json:"alt"`
+                        CategoryId int            `json:"category_id"`
+                        IsPinned   bool           `json:"is_pinned"`
+                }
+                var recipes []Recipe
+                resp, err := db.Query("SELECT * FROM recipes WHERE is_pinned = true;")
+                if err != nil {
+                        c.JSON(http.StatusInternalServerError, err)
+                }
+                defer resp.Close()
+                for resp.Next() {
+                        var recipe Recipe
+                        if err := resp.Scan(&recipe.Id, &recipe.Img, &recipe.Href, &recipe.Label, &recipe.Alt, &recipe.CategoryId, &recipe.IsPinned); err != nil {
+                                log.Fatal(err)
+                        }
+                        recipes = append(recipes, recipe)
+                }
+                c.JSON(http.StatusOK, gin.H{
+                        "recipes": recipes,
+                })
+        })
         r.Run()
 }
