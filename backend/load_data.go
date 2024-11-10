@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"log"
 	"fmt"
-	"io/ioutil"
+	"os"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -29,23 +29,24 @@ func loadData(db *sql.DB) error {
 			category_id INTEGER,
 			is_pinned BOOLEAN,
 			FOREIGN KEY (category_id) REFERENCES categories(id)
+			UNIQUE (img, href, label, alt)
 		);
 		CREATE TABLE IF NOT EXISTS categories (
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
-			category TEXT NOT NULL
+			category TEXT UNIQUE NOT NULL
 		);
 
-		INSERT INTO categories (category) VALUES ('ENTREE');
-		INSERT INTO categories (category) VALUES ('LUNCH');
-		INSERT INTO categories (category) VALUES ('SALAD');
-		INSERT INTO categories (category) VALUES ('SOUP');
-		INSERT INTO categories (category) VALUES ('BREAKFAST');
+		INSERT OR IGNORE INTO categories (category) VALUES ('ENTREE');
+		INSERT OR IGNORE INTO categories (category) VALUES ('LUNCH');
+		INSERT OR IGNORE INTO categories (category) VALUES ('SALAD');
+		INSERT OR IGNORE INTO categories (category) VALUES ('SOUP');
+		INSERT OR IGNORE INTO categories (category) VALUES ('BREAKFAST');
 	`)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	data, err := ioutil.ReadFile("recipes.json")
+	data, err := os.ReadFile("recipes.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -68,7 +69,7 @@ func loadData(db *sql.DB) error {
 		}
 
 		_, err = db.Exec(`
-			INSERT INTO recipes (img, href, label, alt, category_id, is_pinned)
+			INSERT OR IGNORE INTO recipes (img, href, label, alt, category_id, is_pinned)
 			VALUES (?, ?, ?, ?, ?, ?)
 		`, recipe.Img, recipe.Href, recipe.Label, recipe.Alt, categoryID, recipe.IsPinned)
 		if err != nil {
