@@ -22,8 +22,8 @@ func loadData(db *sql.DB) error {
 	_, err := db.Exec(`
 		CREATE TABLE IF NOT EXISTS recipes (
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
-			img TEXT NOT NULL,
-			href TEXT NOT NULL,
+			img TEXT,
+			href TEXT,
 			label TEXT NOT NULL,
 			alt TEXT NOT NULL,
 			category_id INTEGER,
