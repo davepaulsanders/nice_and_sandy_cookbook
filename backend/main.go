@@ -19,15 +19,17 @@ func main() {
         }
         defer db.Close()
         r := gin.Default()
-        r.GET("/healthz", func(c *gin.Context) {
+		v1 := r.Group("/v1") 
+		
+        v1.GET("/healthz", func(c *gin.Context) {
                 c.JSON(http.StatusOK, gin.H{
                         "message": "healthy",
                 })
         })
-		r.GET("/favicon.ico", func(c *gin.Context) {
+		v1.GET("/favicon.ico", func(c *gin.Context) {
 			    c.Status(http.StatusNoContent)  
 		})
-		r.GET("/categories", func (c *gin.Context) {
+		v1.GET("/categories", func (c *gin.Context) {
                 type Category struct {
                         Id         int            `json:"id"`
                         Category   string         `json:"category"`
@@ -50,7 +52,7 @@ func main() {
                 })
 
 		})
-        r.GET("/recipes", func(c *gin.Context) {
+        v1.GET("/recipes", func(c *gin.Context) {
 
                 type Recipe struct {
                         Id         int            `json:"id"`
@@ -78,7 +80,7 @@ func main() {
                         "recipes": recipes,
                 })
         })
-        r.GET("/recipes/pinned", func(c *gin.Context) {
+        v1.GET("/recipes/pinned", func(c *gin.Context) {
 
                 type Recipe struct {
                         Id         int            `json:"id"`
