@@ -9,7 +9,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-type Recipe struct {
+type RecipeLoad struct {
 	Category  string `json:"category"`
 	Label     string `json:"label"`
 	Alt       string `json:"alt"`
@@ -51,7 +51,7 @@ func loadData(db *sql.DB) error {
 		log.Fatal(err)
 	}
 
-	var recipes []Recipe
+	var recipes []RecipeLoad
 	err = json.Unmarshal(data, &recipes)
 	if err != nil {
 		log.Fatal(err)

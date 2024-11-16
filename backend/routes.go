@@ -7,9 +7,21 @@ import (
         "net/http"
 )
 
+type Recipe struct {
+		Id         int            `json:"id"`
+		Img        sql.NullString `json:"img"`
+		Href       sql.NullString `json:"href"`
+		Label      string         `json:"label"`
+		Alt        string         `json:"alt"`
+		CategoryId int            `json:"category_id"`
+		IsPinned   bool           `json:"is_pinned"`
+}
 type RouteHandler struct {
 	DB *sql.DB
-
+}
+type Category struct {
+		Id         int            `json:"id"`
+		Category   string         `json:"category"`
 }
 func (r *RouteHandler) setUp(db *sql.DB) error {
 	r.DB = db
@@ -29,10 +41,6 @@ func (r *RouteHandler) faviconNoContent(c *gin.Context) {
 			}
 
 func (r *RouteHandler) categories(c *gin.Context) {
-                type Category struct {
-                        Id         int            `json:"id"`
-                        Category   string         `json:"category"`
-                }
                 var categories []Category
                 resp, err := r.DB.Query("SELECT * FROM categories;")
                 if err != nil {
@@ -53,15 +61,6 @@ func (r *RouteHandler) categories(c *gin.Context) {
 }
 
 func (r *RouteHandler) recipes(c *gin.Context) {
-                type Recipe struct {
-                        Id         int            `json:"id"`
-                        Img        sql.NullString `json:"img"`
-                        Href       sql.NullString `json:"href"`
-                        Label      string         `json:"label"`
-                        Alt        string         `json:"alt"`
-                        CategoryId int            `json:"category_id"`
-                        IsPinned   bool           `json:"is_pinned"`
-                }
                 var recipes []Recipe
                 resp, err := r.DB.Query("SELECT * FROM recipes;")
                 if err != nil {
@@ -80,15 +79,6 @@ func (r *RouteHandler) recipes(c *gin.Context) {
                 })
 	}
 func (r *RouteHandler) pinnedRecipes (c *gin.Context) {
-                type Recipe struct {
-                        Id         int            `json:"id"`
-                        Img        sql.NullString `json:"img"`
-                        Href       sql.NullString `json:"href"`
-                        Label      string         `json:"label"`
-                        Alt        string         `json:"alt"`
-                        CategoryId int            `json:"category_id"`
-                        IsPinned   bool           `json:"is_pinned"`
-                }
                 var recipes []Recipe
                 resp, err := r.DB.Query("SELECT * FROM recipes WHERE is_pinned = true;")
                 if err != nil {
