@@ -4,7 +4,9 @@ import (
         "database/sql"
         "github.com/gin-gonic/gin"
         _ "github.com/mattn/go-sqlite3"
+		"github.com/gin-contrib/cors"
         "log"
+		"time"
 )
 
 func main() {
@@ -20,6 +22,17 @@ func main() {
 
         r := gin.Default()
 
+		r.Use(cors.New(cors.Config{
+			AllowOrigins:     []string{"*"},
+			AllowMethods:     []string{"GET"},
+			AllowHeaders:     []string{"Origin"},
+			ExposeHeaders:    []string{"Content-Length"},
+			AllowCredentials: true,
+			AllowOriginFunc: func(origin string) bool {
+			  return origin == "https://github.com"
+			},
+			MaxAge: 12 * time.Hour,
+  }))
 		handler := &RouteHandler{} 
 
 		if err = handler.setUp(db); err != nil {

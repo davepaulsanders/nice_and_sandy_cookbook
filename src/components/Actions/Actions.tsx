@@ -13,7 +13,7 @@ const Actions = ({label, type, button, href, onClick}: ActionsProps) => {
 		)
 		} else {
 			return (
-				<a target="_blank" href={href} rel="noopener noreferrer" className="text-xl hover:underline hover:cursor-pointer">{label}</a>
+				<a target="_blank" href={href} rel="noopener noreferrer" className="text-xl hover:underline hover:cursor-pointer whitespace-nowrap">{label}</a>
 			)
 		}
 		
