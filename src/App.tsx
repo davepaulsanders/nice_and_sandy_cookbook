@@ -17,12 +17,12 @@ const getRecipes = async () => {
 	const pinnedList: any = []
 	recipeList.forEach(recipe => {
 		if (!recipeMap.get(recipe.category)) {
-			recipeMap.set(recipe.category, [<RecipeCard img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>])	
+			recipeMap.set(recipe.category, [<RecipeCard recipes={recipes} setRecipes={setRecipes} isPinned={recipe.is_pinned} pinnedRecipes={pinnedRecipes} setPinnedRecipes={setPinnedRecipes} img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>])	
 		} else {
-			recipeMap.get(recipe.category)!.push(<RecipeCard img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>)
+			recipeMap.get(recipe.category)!.push(<RecipeCard recipes={recipes} setRecipes={setRecipes} isPinned={recipe.is_pinned} pinnedRecipes={pinnedRecipes} setPinnedRecipes={setPinnedRecipes} img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>)
 		}
 		if (recipe.is_pinned) {
-			pinnedList.push(<RecipeCard img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>)
+			pinnedList.push(<RecipeCard recipes={recipes} setRecipes={setRecipes} isPinned={recipe.is_pinned} pinnedRecipes={pinnedRecipes} setPinnedRecipes={setPinnedRecipes} img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>)
 		}
 	})
 	setRecipes(recipeMap)
