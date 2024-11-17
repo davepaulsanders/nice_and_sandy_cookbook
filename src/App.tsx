@@ -24,7 +24,7 @@ const getRecipes = async () => {
 
 }
   return (
-	  <>
+	<>
 	<Home />
 	{recipes && Array.from(recipes).map(([key, val]) => {
 		return (<Category category={key} children={val} />)

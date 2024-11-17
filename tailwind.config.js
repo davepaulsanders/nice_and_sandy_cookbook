@@ -5,6 +5,7 @@ const colors = {
 	lgg: "#52796f",
 	xlg: "#354f52",	
 	xxlg: "#2f3e46",
+	darkg: "#283618",
 	deleteColor: "#bc4749",
 	deleteColorHover: "#9b2226"
 
