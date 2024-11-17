@@ -13,7 +13,9 @@ jobs:
       - name: build image
         run: |
           docker build -t davepsandy/nice_and_sandy_cookbook:latest .
+          docker build -t davepsandy/go-recipes:latest .
       - name: push image to docker hub
         run: |
           echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login -u davepaulsanders@gmail.com --password-stdin
           docker push davepsandy/nice_and_sandy_cookbook:latest
+          docker push davepsandy/go-recipes:latest

@@ -9,6 +9,11 @@ services:
       - ./:/app
     networks:
       - test_network
+  backend:
+    container_name: go-recipes
+    image: go-recipes
+    ports:
+      - "8080:8080"
 networks:
   test_network:
     driver: bridge
