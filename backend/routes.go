@@ -5,16 +5,28 @@ import (
         _ "github.com/mattn/go-sqlite3"
         "log"
         "net/http"
+		"encoding/json"
 )
+type customNull struct {
+sql.NullString;
+}
+
+func (s *customNull) MarshalJSON() ([]byte, error) {
+    if s.Valid {
+        return json.Marshal(s.String)
+    }
+    return json.Marshal("")
+}
 
 type Recipe struct {
 		Id         int            `json:"id"`
-		Img        sql.NullString `json:"img"`
-		Href       sql.NullString `json:"href"`
+		Img        customNull	  `json:"img"`
+		Href       customNull     `json:"href"`
 		Label      string         `json:"label"`
 		Alt        string         `json:"alt"`
 		CategoryId int            `json:"category_id"`
 		IsPinned   bool           `json:"is_pinned"`
+		Category   string         `json:"category"`
 }
 type RouteHandler struct {
 	DB *sql.DB
@@ -62,14 +74,14 @@ func (r *RouteHandler) categories(c *gin.Context) {
 
 func (r *RouteHandler) recipes(c *gin.Context) {
                 var recipes []Recipe
-                resp, err := r.DB.Query("SELECT * FROM recipes;")
+                resp, err := r.DB.Query("SELECT a.*, b.category FROM recipes as a join categories as b on a.category_id = b.id;")
                 if err != nil {
                         c.JSON(http.StatusInternalServerError, err)
                 }
                 defer resp.Close()
                 for resp.Next() {
                         var recipe Recipe
-                        if err := resp.Scan(&recipe.Id, &recipe.Img, &recipe.Href, &recipe.Label, &recipe.Alt, &recipe.CategoryId, &recipe.IsPinned); err != nil {
+                        if err := resp.Scan(&recipe.Id, &recipe.Img, &recipe.Href, &recipe.Label, &recipe.Alt, &recipe.CategoryId, &recipe.IsPinned, &recipe.Category); err != nil {
                                 log.Fatal(err)
                         }
                         recipes = append(recipes, recipe)
