@@ -13,6 +13,7 @@ jobs:
       - name: build image
         run: |
           docker build -t davepsandy/nice_and_sandy_cookbook:latest .
+          cd backend
           docker build -t davepsandy/go-recipes:latest .
       - name: push image to docker hub
         run: |
