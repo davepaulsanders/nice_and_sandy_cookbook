@@ -14,6 +14,7 @@ const [categories, setCategories] = useState<any[]>([])
 	getRecipes()
 	getCategories()
 }, [])
+const pinnedRecipes = recipes.filter(recp => recp.is_pinned === true)
 const getRecipes = async () => {
 	const { recipes: recipeList } = await fetchData("http://localhost:8080/v1/recipes")
 	setRecipes(recipeList)
@@ -25,11 +26,14 @@ const getCategories = async () => {
   return (
 	<>
 	<Home />
-	{recipes ? (
+	<div className="my-16 w-full flex flex-col justify-center mx-auto"><p className="text-lightg font-bold text-4xl text-center my-10">PINNED RECIPES</p>
+	{pinnedRecipes.length > 0 ? (
      <Wrapper>
-	 {recipes.filter(recp => recp.is_pinned === true).map(recp => <RecipeCard {...recp} recipes={recipes} setRecipes={setRecipes} />)}
+	 {pinnedRecipes.map(recp => <RecipeCard {...recp} recipes={recipes} setRecipes={setRecipes} />)}
 	</Wrapper>	
-	) : (<><p className="text-4xl font-bold mt-16 mb-8 text-lightg">Pinned Recipes</p><p className="text-medg">No pinned recipes :(</p></>)}
+	) : (<p className="text-medg">No pinned recipes :(</p>)}
+
+	</div>
 	{categories && recipes && categories.map(category => <Category category={category.category} recipes={recipes} setRecipes={setRecipes}/>)}	
 	</>
   )
