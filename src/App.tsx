@@ -1,6 +1,7 @@
 import { useState, useEffect, Fragment } from "react"
 import './App.css'
 import { fetchData } from "./utils/fetch"
+import { useMemo } from "react"
 import Home from "./pages/Home/Home"
 import Wrapper from "./components/Wrapper/Wrapper"
 import Category from "./components/Category/Category"
@@ -14,7 +15,7 @@ const [categories, setCategories] = useState<any[]>([])
 	getRecipes()
 	getCategories()
 }, [])
-const pinnedRecipes = recipes.filter(recp => recp.is_pinned === true)
+const pinnedRecipes = useMemo(() => recipes.filter(recp => recp.is_pinned === true), [recipes])
 const getRecipes = async () => {
 	const { recipes: recipeList } = await fetchData("http://localhost:8080/v1/recipes")
 	setRecipes(recipeList)
