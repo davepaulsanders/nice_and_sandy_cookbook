@@ -7,40 +7,30 @@ import Category from "./components/Category/Category"
 import RecipeCard from "./components/RecipeCard/RecipeCard"
 
 const App = () => {
-const [recipes, setRecipes] = useState<Map<string, any[]>>()
-const [pinnedRecipes, setPinnedRecipes] = useState<any[]>([])
+const [recipes, setRecipes] = useState<any[]>([])
+const [categories, setCategories] = useState<any[]>([])
+
  useEffect(() => {
 	getRecipes()
+	getCategories()
 }, [])
 const getRecipes = async () => {
 	const { recipes: recipeList } = await fetchData("http://localhost:8080/v1/recipes")
-	const recipeMap = new Map()
-	const pinnedList: any[] = []
-	recipeList.forEach(recipe => {
-		if (!recipeMap.get(recipe.category)) {
-			recipeMap.set(recipe.category, [recipe])	
-		} else {
-			recipeMap.get(recipe.category).push(recipe)
-		}
-		if (recipe.is_pinned) {
-			pinnedList.push(recipe)
-		}
-	})
-	setRecipes(recipeMap)
-	setPinnedRecipes(pinnedList)
+	setRecipes(recipeList)
 }
-console.log(pinnedRecipes)
+const getCategories = async () => {
+	const { categories: categoriesList} = await fetchData("http://localhost:8080/v1/categories")
+	setCategories(categoriesList)
+}
   return (
 	<>
 	<Home />
-	{pinnedRecipes.length > 0 ? (
+	{recipes ? (
      <Wrapper>
-		{pinnedRecipes.map(recp => <RecipeCard {...recp} recipes={recipes} pinnedRecipes={pinnedRecipes} setRecipes={setRecipes} setPinnedRecipes={setPinnedRecipes} />)}
+	 {recipes.filter(recp => recp.is_pinned === true).map(recp => <RecipeCard {...recp} recipes={recipes} setRecipes={setRecipes} />)}
 	</Wrapper>	
 	) : (<><p className="text-4xl font-bold mt-16 mb-8 text-lightg">Pinned Recipes</p><p className="text-medg">No pinned recipes :(</p></>)}
-	{recipes && Array.from(recipes).map(([key, val]) => {
-		return (<Category setRecipes={setRecipes} pinnedRecipes={pinnedRecipes} setPinnedRecipes={setPinnedRecipes} category={key} recipes={val} />)
-	})}
+	{categories && recipes && categories.map(category => <Category category={category.category} recipes={recipes} setRecipes={setRecipes}/>)}	
 	</>
   )
 }

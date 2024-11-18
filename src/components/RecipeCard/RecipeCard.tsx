@@ -6,11 +6,26 @@ import cancelPin from "/thumb-tack-cancel.webp"
 const RecipeCard = (props) => {
 	const pinRecipeToggle = (e) => {
 		e.preventDefault()
-		const {recipes, setRecipes, pinnedRecipes, setPinnedRecipes, is_pinned, ...rest} = props
+		const {recipes, setRecipes, is_pinned, ...rest} = props
 		if (props.is_pinned) {
-			props.setPinnedRecipes(prev => [...prev.filter(recipe => recipe.id !== props.id)])
-		} else if (!props.pinnedRecipes.some(recipe => recipe.id === props.id)) {
-			props.setPinnedRecipes(prev => [...prev, {...rest, is_pinned: true}])
+			props.setRecipes(prev => {
+				return prev.map((rec) => {
+				if (rec.id === props.id) {
+				  return { ...rest, is_pinned: false};
+				}
+				return rec;
+				})
+			  })
+
+		} else {
+			props.setRecipes(prev => {
+				return prev.map((rec) => {
+				if (rec.id === props.id) {
+				  return { ...rest, is_pinned: true};
+				}
+				return rec;
+				})
+			  })
 		}
 	}
 	return (
