@@ -3,7 +3,12 @@ import CardContent from "../CardContent/CardContent"
 import tack from "/thumb-tack.webp" 
 import cancelPin from "/thumb-tack-cancel.webp" 
 import { pinRecipeToggle } from "./RecipeCardUtils"
-const RecipeCard = (props) => {
+import { Recipe } from "../../types/types"
+interface RecipeCardProps extends Recipe {
+	recipes: Recipe[]
+	setRecipes: React.Dispatch<React.SetStateAction<Recipe[]>>
+}
+const RecipeCard = (props: RecipeCardProps) => {
 	return (
 		<div className="relative bg-lightg flex flex-col justify-content-center \
 		items-center shadow-lg rounded-md">

@@ -1,6 +1,12 @@
 import Wrapper from "../Wrapper/Wrapper"
 import RecipeCard from "../RecipeCard/RecipeCard"
-const Category = ({category, recipes, setRecipes }: {category: string, recipes: any[], setRecipes: any}) => {
+import { Recipe } from "../../types/types"
+interface CategoryProps {
+	category: string;
+	recipes: Recipe[]
+	setRecipes: React.Dispatch<React.SetStateAction<Recipe[]>>
+}
+const Category = ({category, recipes, setRecipes }: CategoryProps) => {
 	return (
 		<section className="my-16 w-full">
 		<p className="text-lightg font-bold text-4xl my-10 text-center">{category}</p>

@@ -1,8 +1,6 @@
 import Actions from "../Actions/Actions"
-interface CardContentProps {
-	label: string;
-	[key: string]: any;
-}
+import { Recipe } from "../../types/types"
+interface CardContentProps extends Recipe {}
 const CardContent = ({label, href, ..._rest }: CardContentProps) => {
 	return (
 		<div className="m-4">
