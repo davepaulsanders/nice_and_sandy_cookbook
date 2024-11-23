@@ -11,7 +11,7 @@ interface RecipeCardProps extends Recipe {
 const RecipeCard = (props: RecipeCardProps) => {
 	return (
 		<div className="relative bg-lightg flex flex-col justify-content-center \
-		items-center shadow-lg rounded-md">
+		items-center shadow-lg rounded-xl">
 			<CardHeader {...props} />
 			<CardContent {...props} />
 			<img onClick={(e)=> pinRecipeToggle(e, props)} width="30px" height="30px" className="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer" src={props.is_pinned ? cancelPin : tack}/>
