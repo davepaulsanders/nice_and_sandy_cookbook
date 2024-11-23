@@ -1,6 +1,13 @@
-export const pinRecipeToggle = (e, props) => {
+import { fetchData } from "../../utils/fetch"
+
+export const pinRecipeToggle = async (e, props) => {
 		e.preventDefault()
 		const {recipes, setRecipes, is_pinned, ...rest} = props
+		await fetchData(`http://localhost:8080/v1/recipes/pinned/${props.id}`, 
+					{
+						method: "PATCH",
+						"Content-Type": "application/json"
+					})
 		if (props.is_pinned) {
 			props.setRecipes(prev => {
 				return prev.map((rec) => {

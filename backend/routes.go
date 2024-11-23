@@ -1,11 +1,14 @@
 package main
+
 import (
-        "database/sql"
-        "github.com/gin-gonic/gin"
-        _ "github.com/mattn/go-sqlite3"
-        "log"
-        "net/http"
-		"encoding/json"
+	"database/sql"
+	"encoding/json"
+	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+	_ "github.com/mattn/go-sqlite3"
 )
 type customNull struct {
 sql.NullString;
@@ -26,7 +29,7 @@ type Recipe struct {
 		Alt        string         `json:"alt"`
 		CategoryId int            `json:"category_id"`
 		IsPinned   bool           `json:"is_pinned"`
-		Category   string         `json:"category"`
+		Category   *string         `json:"category"`
 }
 type RouteHandler struct {
 	DB *sql.DB
@@ -107,5 +110,37 @@ func (r *RouteHandler) pinnedRecipes (c *gin.Context) {
                 c.JSON(http.StatusOK, gin.H{
                         "recipes": recipes,
                 })
+
+	}
+func (r *RouteHandler) togglePinnedRecipes(c *gin.Context) {
+                //var recipes []Recipe
+				id := c.Param("id")
+				resp, err := r.DB.Exec("UPDATE recipes SET is_pinned = NOT is_pinned WHERE id = ?", id)
+				if err != nil {
+						c.JSON(http.StatusInternalServerError, err)
+				}
+				rowsAffected, err := resp.RowsAffected()
+					if err != nil {
+					c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+					return
+				}
+				if rowsAffected == 0 {
+					c.JSON(http.StatusNotFound, gin.H{"message": "Recipe not found"})
+					return
+				}
+				grabRow, err := r.DB.Query(fmt.Sprintf("SELECT * FROM recipes WHERE id = %s", id))
+				if err != nil {
+						c.JSON(http.StatusInternalServerError, err)
+				}
+				defer grabRow.Close()
+				var recipe Recipe
+                for grabRow.Next() {
+						if err := grabRow.Scan(&recipe.Id, &recipe.Img, &recipe.Href, &recipe.Label, &recipe.Alt, &recipe.CategoryId, &recipe.IsPinned); err != nil {
+								log.Fatal(err)
+						}
+				}
+				c.JSON(http.StatusOK, gin.H{
+						"updated_recipe": recipe,
+				})
 
 	}
