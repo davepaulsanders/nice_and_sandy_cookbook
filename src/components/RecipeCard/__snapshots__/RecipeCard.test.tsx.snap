@@ -3,27 +3,35 @@
 exports[`<RecipeCard /> as link renders 1`] = `
 <div>
   <div
-    class="flex flex-col justify-content-center \\   items-center min-w-[20rem] max-w-[30rem] min-h-[20rem] shadow-lg rounded-md"
+    class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
   >
     <div
-      class="w-11/12"
+      class="mt-4 w-11/12"
     >
       <img
+        alt="test"
         class="h-[27rem] w-full object-cover"
+        src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
       />
     </div>
     <div
       class="m-4"
     >
       <a
-        class="text-xl hover:underline hover:cursor-pointer"
-        href="www.google.com"
+        class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
+        href="https://www.feastingathome.com/vegan-fajitas/"
         rel="noopener noreferrer"
         target="_blank"
       >
-        test
+        Vegan Fajitas
       </a>
     </div>
+    <img
+      class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
+      height="30px"
+      src="/thumb-tack.webp"
+      width="30px"
+    />
   </div>
 </div>
 `;
@@ -31,29 +39,35 @@ exports[`<RecipeCard /> as link renders 1`] = `
 exports[`<RecipeCard /> as submit button renders 1`] = `
 <div>
   <div
-    class="flex flex-col justify-content-center \\   items-center min-w-[20rem] max-w-[30rem] min-h-[20rem] shadow-lg rounded-md"
+    class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
   >
     <div
-      class="w-11/12"
+      class="mt-4 w-11/12"
     >
       <img
         alt="test"
         class="h-[27rem] w-full object-cover"
-        src="https://fastly.picsum.photos/id/454/200/300.jpg?hmac=wGXBDB3HURz2isRdLrgggeWdD1yO3rdX4B3-jlzRncg"
+        src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
       />
     </div>
     <div
       class="m-4"
     >
       <a
-        class="text-xl hover:underline hover:cursor-pointer"
+        class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
         href="https://www.feastingathome.com/vegan-fajitas/"
         rel="noopener noreferrer"
         target="_blank"
       >
-        test
+        Vegan Fajitas
       </a>
     </div>
+    <img
+      class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
+      height="30px"
+      src="/thumb-tack.webp"
+      width="30px"
+    />
   </div>
 </div>
 `;

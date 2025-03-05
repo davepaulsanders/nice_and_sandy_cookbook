@@ -14,7 +14,7 @@ exports[`<Actions /> as delete button renders 1`] = `
 exports[`<Actions /> as link renders 1`] = `
 <div>
   <a
-    class="text-xl hover:underline hover:cursor-pointer"
+    class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
     href="www.google.com"
     rel="noopener noreferrer"
     target="_blank"

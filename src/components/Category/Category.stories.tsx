@@ -1,9 +1,10 @@
+import { vi } from "vitest"
 import type { Meta, StoryObj } from '@storybook/react';
 import Category from './Category';
  
-import { generateRecipeCards } from "../../utils/testUtils"
+import { generateRecipes } from "../../utils/testUtils"
 
-const children = generateRecipeCards()
+const recipes = generateRecipes()
 
 const meta: Meta<typeof Category> = {
   component: Category,
@@ -12,4 +13,6 @@ const meta: Meta<typeof Category> = {
 export default meta;
 
 type Story = StoryObj<typeof Category>;
-export const CategoryStory: Story = {args: {category: "Entree", children: children}} 
+const mock = vi.fn()
+// @ts-ignore
+export const CategoryStory: Story = {args: {category: "Entree", recipes: recipes, setRecipes={mock}}}

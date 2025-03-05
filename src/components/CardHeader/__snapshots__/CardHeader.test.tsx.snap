@@ -3,12 +3,12 @@
 exports[`<CardHeader /> renders 1`] = `
 <div>
   <div
-    class="w-11/12"
+    class="mt-4 w-11/12"
   >
     <img
       alt="test"
       class="h-[27rem] w-full object-cover"
-      src="https://fastly.picsum.photos/id/454/200/300.jpg?hmac=wGXBDB3HURz2isRdLrgggeWdD1yO3rdX4B3-jlzRncg"
+      src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
     />
   </div>
 </div>

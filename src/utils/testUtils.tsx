@@ -1,16 +1,41 @@
 import RecipeCard from '../components/RecipeCard/RecipeCard';
 import { ReactElement } from "react"
+import { vi } from "vitest"
+import { Recipe } from "../types/types"
 
-const generateRecipeCards = () => {
-	
-const children: ReactElement[] = []
+const generateRecipes = () => {
+const recipes: Recipe[] = []
 for (let i = 0; i < 10; i++) {
-	children.push(<RecipeCard 
+	recipes.push({
+	id:i + 1,
+	img:"https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg",
+	href:"https://www.feastingathome.com/vegan-fajitas/",
+	label:"Vegan Fajitas",
+	alt:"test",
+	category:"ENTREE",
+	category_id:1,
+	is_pinned: false,
+	})
+}
+return recipes
+}
+const generateRecipeCards = () => {
+const recipeCards: ReactElement[] = []
+for (let i = 0; i < 10; i++) {
+	recipeCards.push(
+	<RecipeCard
+	id={i + 1}
 	img="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
 	href="https://www.feastingathome.com/vegan-fajitas/"
 	label="Vegan Fajitas"
-	alt="test" />)
+	alt="test"
+	category="ENTREE"
+	category_id={1}
+	is_pinned= {false}
+	recipes={generateRecipes()}
+	setRecipes={vi.fn()}
+	/>)
 	}
-	return children
+	return recipeCards
 }
-export { generateRecipeCards }
+export { generateRecipeCards, generateRecipes }
