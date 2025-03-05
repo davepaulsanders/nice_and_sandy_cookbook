@@ -1,0 +1,24 @@
+services:
+  frontend:
+    container_name: frontend
+    image:  davepsandy/nice_and_sandy_cookbook:latest 
+    command: ["nginx", "-g", "daemon off;"]
+    ports:
+      - "80:3002"
+    volumes:
+      - ./:/app
+    networks:
+      - test_network
+  backend:
+    container_name: go-recipes
+    image: davepsandy/go-recipes:latest 
+    ports:
+      - "8080"
+    volumes:
+      - ./backend/recipes.db:/app/recipes.db
+    networks:
+      - test_network
+networks:
+  test_network:
+    driver: bridge
+
