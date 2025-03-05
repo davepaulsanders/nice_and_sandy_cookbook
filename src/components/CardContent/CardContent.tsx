@@ -1,7 +1,6 @@
 import Actions from "../Actions/Actions"
 import { Recipe } from "../../types/types"
-interface CardContentProps extends Recipe {}
-const CardContent = ({label, href, ..._rest }: CardContentProps) => {
+const CardContent = ({label, href, ..._rest }: Recipe) => {
 	return (
 		<div className="m-4">
 		<Actions label={label} href={href} type="link" />
