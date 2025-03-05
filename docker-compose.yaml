@@ -14,6 +14,8 @@ services:
     image: go-recipes
     ports:
       - "8080:8080"
+    volumes:
+      - ./backend/recipes.db:/app/recipes.db
     networks:
       - test_network
 networks:

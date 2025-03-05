@@ -5,14 +5,22 @@ body {
 	background-color: #2a5a40;
 }
 #root {
-	max-width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
 }
-@media screen and (max-width: 640px) {
-	max-width: 95%;
+
+.subtitle {
+	font-family: "Dancing Script";
+	line-height: 3rem;
+
 }
 
 * {
     scrollbar-width: none; /* Firefox */
+	font-family: "PT Sans";
+	letter-spacing: 0.5px;
 }
 
 *::-webkit-scrollbar {

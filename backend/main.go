@@ -24,7 +24,7 @@ func main() {
 
 		r.Use(cors.New(cors.Config{
 			AllowOrigins:     []string{"*"},
-			AllowMethods:     []string{"GET"},
+			AllowMethods:     []string{"GET", "PATCH"},
 			AllowHeaders:     []string{"Origin"},
 			ExposeHeaders:    []string{"Content-Length"},
 			AllowCredentials: true,
@@ -45,5 +45,6 @@ func main() {
 		v1.GET("/categories", handler.categories) 
         v1.GET("/recipes", handler.recipes)
         v1.GET("/recipes/pinned", handler.pinnedRecipes)
+		v1.PATCH("/recipes/pinned/:id", handler.togglePinnedRecipes)
         r.Run()
 }

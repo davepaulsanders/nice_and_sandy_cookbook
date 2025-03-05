@@ -1,44 +1,44 @@
-import { useState, useEffect, Fragment } from "react"
+import { useState, useEffect } from "react"
 import './App.css'
 import { fetchData } from "./utils/fetch"
 import Home from "./pages/Home/Home"
+import Wrapper from "./components/Wrapper/Wrapper"
 import Category from "./components/Category/Category"
 import RecipeCard from "./components/RecipeCard/RecipeCard"
-
+import {Recipe, Category as CategoryType} from "./types/types"
 const App = () => {
-const [recipes, setRecipes] = useState<Map<string, any[]>>()
-const [pinnedRecipes, setPinnedRecipes] = useState<any>([])
+const [recipes, setRecipes] = useState<Recipe[]>([])
+const [categories, setCategories] = useState<CategoryType[]>([])
+
  useEffect(() => {
 	getRecipes()
+	getCategories()
 }, [])
+
+const pinnedRecipes = recipes.filter(recp => recp.is_pinned === true)
+
 const getRecipes = async () => {
-	const { recipes: recipeList } = await fetchData("http://localhost:8080/v1/recipes")
-	const recipeMap = new Map()
-	const pinnedList: any = []
-	recipeList.forEach(recipe => {
-		if (!recipeMap.get(recipe.category)) {
-			recipeMap.set(recipe.category, [<RecipeCard img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>])	
-		} else {
-			recipeMap.get(recipe.category)!.push(<RecipeCard img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>)
-		}
-		if (recipe.is_pinned) {
-			pinnedList.push(<RecipeCard img={recipe.img} href={recipe.href} label={recipe.label} alt={recipe.alt}/>)
-		}
-	})
-	setRecipes(recipeMap)
-	setPinnedRecipes(pinnedList)
+	const { recipes: recipeList } = await fetchData("../v1/recipes")
+	setRecipes(recipeList)
+}
+const getCategories = async () => {
+	const { categories: categoriesList} = await fetchData("../v1/categories")
+	setCategories(categoriesList)
 }
   return (
 	<>
 	<Home />
+	<div className="mt-4 sm:mt-6 w-5/12 mx-auto border-b border-slate-200"></div>
+	<div className="w-full flex flex-col justify-center mx-auto"><p className="text-lightg font-bold text-3xl text-center my-10">PINNED RECIPES</p>
 	{pinnedRecipes.length > 0 ? (
-		<Category category="Pinned Recipes" children={pinnedRecipes}/> ) : (
-		<><p className="text-4xl font-bold mt-16 mb-8 text-lightg">Pinned Recipes</p><p className="text-medg">No pinned recipes :(</p></>)}
-	{recipes && Array.from(recipes).map(([key, val]) => {
-		return (<Category category={key} children={val} />)
-	})}
+     <Wrapper>
+	 {pinnedRecipes.map(recp => <RecipeCard {...recp} recipes={recipes} setRecipes={setRecipes} />)}
+	</Wrapper>	
+	) : (<p className="text-medg">No pinned recipes :(</p>)}
+
+	</div>
+	{categories && recipes && categories.map(category => <Category category={category.category} recipes={recipes} setRecipes={setRecipes}/>)}	
 	</>
   )
 }
-
 export default App
