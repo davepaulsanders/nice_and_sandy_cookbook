@@ -12,7 +12,6 @@ const [recipes, setRecipes] = useState<Recipe[]>([])
 const [categories, setCategories] = useState<CategoryType[]>([])
 const [recipeSearchCopy, setRecipeSearchCopy] = useState<Recipe[]>([])
 const [search, setSearch] = useState(false)
-
  useEffect(() => {
 	getRecipes()
 	getCategories()

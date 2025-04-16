@@ -9,16 +9,6 @@ export const pinRecipeToggle = async (e, props) => {
 						"Content-Type": "application/json"
 				})
 		if (props.is_pinned) {
-			if (setRecipeSearchCopy) {
-			setRecipeSearchCopy(prev => {
-				return prev.map(rec => {
-				if (rec.id === props.id) {
-					return {...rest, is_pinned: false}
-				}
-				return rec
-			})	
-			})
-			}
 			props.setRecipes(prev => {
 				return prev.map((rec) => {
 				if (rec.id === props.id) {
@@ -28,16 +18,6 @@ export const pinRecipeToggle = async (e, props) => {
 				})
 			  })
 		} else {
-			if (setRecipeSearchCopy) {
-			setRecipeSearchCopy(prev => {
-				return prev.map(rec => {
-				if (rec.id === props.id) {
-					return {...rest, is_pinned: true}
-				}
-				return rec
-			})	
-			})
-			}
 			props.setRecipes(prev => {
 				return prev.map((rec) => {
 				if (rec.id === props.id) {

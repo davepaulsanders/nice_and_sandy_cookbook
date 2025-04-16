@@ -1,6 +1,13 @@
-import { useState } from "react"
-const SearchRecipes = ({ recipes, setRecipes, setSearch, recipeSearchCopy, setRecipeSearchCopy }) => {
+import { useState, useEffect } from "react"
+const SearchRecipes = ({ recipes, setSearch, setRecipeSearchCopy }) => {
 	const [searchInputVal, setSearchInputVal] = useState("")
+
+	// if recipes changes, refilter with changes
+	useEffect(() => {
+		const reg = new RegExp(`${searchInputVal}`, "i")
+		const filtered = recipes.filter(recp => reg.test(recp.label))
+		setRecipeSearchCopy(filtered)
+	}, [recipes])
 
 	const resetRecipes = async (e) => {
 		setSearch(false)
@@ -8,21 +15,14 @@ const SearchRecipes = ({ recipes, setRecipes, setSearch, recipeSearchCopy, setRe
 	}
 	const searchRecipes = (val: string) => {
 		const reg = new RegExp(`${val}`, "i")
-		setRecipeSearchCopy(prev => prev.filter(recp => {
-			if (reg.test(recp.label)) {
-				return recp
-			} else {
-				return
-			}
-		}))
+		const filtered = recipes.filter(recp => reg.test(recp.label))
+		setRecipeSearchCopy(filtered)
 	}
 	const handleChange= (e) => {
 		setSearch(true)
 		if (!e.target.value) {
 			resetRecipes(e)
 		} else {
-			// repopulate list every time
-			setRecipeSearchCopy(recipes)
 			searchRecipes(e.target.value)
 			setSearchInputVal(e.target.value)
 		}
