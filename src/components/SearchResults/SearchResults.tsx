@@ -1,10 +1,10 @@
 import RecipeCard from "../RecipeCard/RecipeCard"
 import Wrapper from "../Wrapper/Wrapper"
 
-const SearchResults = ({recipes, setRecipes}) => {
+const SearchResults = ({recipeSearchCopy, setRecipeSearchCopy, setRecipes }) => {
 	return (
 		<Wrapper>
-			{recipes.map((recipe) =>  <RecipeCard {...recipe} />)}
+			{recipeSearchCopy.map((recipe) =>  <RecipeCard {...recipe} setRecipeSearchCopy={setRecipeSearchCopy} setRecipes={setRecipes}/>)}
 		</Wrapper>
 		   )
 }
