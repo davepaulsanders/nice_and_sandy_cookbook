@@ -22,6 +22,7 @@ const pinnedRecipes = recipes.filter(recp => recp.is_pinned === true)
 
 const getRecipes = async () => {
 	const { recipes: recipeList } = await fetchData("../v1/recipes")
+	cachedRecipes.current = recipeList
 	setRecipes(recipeList)
 	setRecipeSearchCopy(recipeList)
 }
