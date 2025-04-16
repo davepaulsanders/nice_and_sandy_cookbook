@@ -7,6 +7,7 @@ import { Recipe } from "../../types/types"
 interface RecipeCardProps extends Recipe {
 	recipes: Recipe[]
 	setRecipes: React.Dispatch<React.SetStateAction<Recipe[]>>
+	setRecipeSearchCopy: React.Dispatch<React.SetStateAction<Recipe[]>>
 }
 const RecipeCard = (props: RecipeCardProps) => {
 	return (
