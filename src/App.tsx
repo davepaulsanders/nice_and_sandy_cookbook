@@ -32,7 +32,7 @@ const getCategories = async () => {
 	<>
 	<Home />
 	<div className="mt-4 sm:mt-6 w-5/12 mx-auto border-b border-slate-200"></div>
-	<SearchRecipes recipes={recipes} setRecipes={setRecipes} setSearch={setSearch} recipeSearchCopy={recipeSearchCopy} setRecipeSearchCopy={setRecipeSearchCopy} />
+	<SearchRecipes recipes={recipes} setSearch={setSearch} setRecipeSearchCopy={setRecipeSearchCopy} />
 	{!search ? (
 		<PinnedRecipes recipes={recipes} pinnedRecipes={pinnedRecipes} setRecipes={setRecipes}/>
 	): null}
