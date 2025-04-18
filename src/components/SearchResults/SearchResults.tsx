@@ -4,7 +4,7 @@ import Wrapper from "../Wrapper/Wrapper"
 const SearchResults = ({recipeSearchCopy, setRecipeSearchCopy, setRecipes }) => {
 	return (
 		<Wrapper>
-			{recipeSearchCopy.map((recipe) =>  <RecipeCard {...recipe} setRecipeSearchCopy={setRecipeSearchCopy} setRecipes={setRecipes}/>)}
+			{recipeSearchCopy.map((recipe) =>  <RecipeCard key={recipe.id} {...recipe} setRecipeSearchCopy={setRecipeSearchCopy} setRecipes={setRecipes}/>)}
 		</Wrapper>
 		   )
 }

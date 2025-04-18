@@ -13,6 +13,6 @@ test('<Wrapper /> renders', async () => {
 })
 test('<Wrapper /> cards exist', async () => {
 	render(<Wrapper children={children}/>)
-	const labels = await screen.getAllByAltText("test")
+	const labels = screen.getAllByAltText("test")
 	expect(labels.length).toBe(10)
 })
