@@ -1,9 +1,9 @@
-import Home from "./Home" 
+import Header from "./Header" 
 import { expect, test } from 'vitest'
 import {render } from '@testing-library/react'
 import '@testing-library/dom'
 
-test('<Home /> renders', () => {
-	const { container } = render(<Home />)
+test('<Header /> renders', () => {
+	const { container } = render(<Header />)
 	expect(container).toMatchSnapshot()
 })

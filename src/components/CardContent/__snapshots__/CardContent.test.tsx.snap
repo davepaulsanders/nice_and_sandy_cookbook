@@ -11,7 +11,7 @@ exports[`<CardContent /> renders 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      Vegan Fajitas
+      Vegan Fajitas 1
     </a>
   </div>
 </div>
