@@ -1,5 +1,8 @@
 services:
   frontend:
+    build:
+      context: .
+      target: base 
     container_name: frontend
     image: frontend_local_dev
     command: ["pnpm", "vite", "--host"]
@@ -10,6 +13,8 @@ services:
     networks:
       - test_network
   backend:
+    build:
+      context: ./backend
     container_name: go-recipes
     image: go-recipes
     ports:

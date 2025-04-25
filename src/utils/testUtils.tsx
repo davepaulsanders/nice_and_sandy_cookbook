@@ -10,11 +10,11 @@ for (let i = 0; i < 10; i++) {
 	id:i + 1,
 	img:"https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg",
 	href:"https://www.feastingathome.com/vegan-fajitas/",
-	label:"Vegan Fajitas",
+	label:`Vegan Fajitas ${i + 1}`,
 	alt:"test",
 	category:"ENTREE",
 	category_id:1,
-	is_pinned: false,
+	is_pinned: i === 0 ? false : true,
 	})
 }
 return recipes
@@ -27,7 +27,7 @@ for (let i = 0; i < 10; i++) {
 	id={i + 1}
 	img="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
 	href="https://www.feastingathome.com/vegan-fajitas/"
-	label="Vegan Fajitas"
+	label="Vegan Fajitas 2"
 	alt="test"
 	category="ENTREE"
 	category_id={1}

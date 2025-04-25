@@ -15,7 +15,7 @@ const RecipeCard = (props: RecipeCardProps) => {
 		items-center shadow-lg rounded-xl">
 			<CardHeader {...props} />
 			<CardContent {...props} />
-			<img onClick={(e)=> pinRecipeToggle(e, props)} width="30px" height="30px" className="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer" src={props.is_pinned ? cancelPin : tack}/>
+			<img data-testid="pin" onClick={(e)=> pinRecipeToggle(e, props)} width="30px" height="30px" className="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer" src={props.is_pinned ? cancelPin : tack}/>
 		</div>
 	)
 	}
