@@ -7,6 +7,7 @@ import {Recipe, Category as CategoryType} from "./types/types"
 import SearchRecipes from "./components/SearchRecipes/SearchRecipes"
 import SearchResults from "./components/SearchResults/SearchResults"
 import PinnedRecipes from "./components/PinnedRecipes/PinnedRecipes"
+import HamburgerMenu from "./components/Hamburger/Hamburger"
 const App = () => {
 const [recipes, setRecipes] = useState<Recipe[]>([])
 const [categories, setCategories] = useState<CategoryType[]>([])
@@ -31,6 +32,7 @@ const getCategories = async () => {
 }
 return (
   <>
+	<HamburgerMenu />
     <Header />
     <div className="mt-4 sm:mt-6 w-5/12 mx-auto border-b border-slate-200"></div>
     <SearchRecipes 
@@ -45,6 +47,7 @@ return (
           pinnedRecipes={pinnedRecipes} 
           setRecipes={setRecipes} 
         />
+
         {categories && recipes && categories.map((category) => (
           <Category 
             key={category.id || category.category}
