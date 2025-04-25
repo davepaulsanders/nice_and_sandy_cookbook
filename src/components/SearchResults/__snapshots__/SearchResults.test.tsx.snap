@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Wrapper /> renders 1`] = `
+exports[`<SearchResults /> renders 1`] = `
 <div>
   <div
     class="grid gap-4 sm:grid-cols-4 sm:mx-auto"
@@ -26,7 +26,7 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 1
         </a>
       </div>
       <img
@@ -65,7 +65,7 @@ exports[`<Wrapper /> renders 1`] = `
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>
@@ -90,14 +90,14 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 3
         </a>
       </div>
       <img
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>
@@ -122,14 +122,14 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 4
         </a>
       </div>
       <img
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>
@@ -154,14 +154,14 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 5
         </a>
       </div>
       <img
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>
@@ -186,14 +186,14 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 6
         </a>
       </div>
       <img
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>
@@ -218,14 +218,14 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 7
         </a>
       </div>
       <img
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>
@@ -250,14 +250,14 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 8
         </a>
       </div>
       <img
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>
@@ -282,14 +282,14 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 9
         </a>
       </div>
       <img
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>
@@ -314,14 +314,14 @@ exports[`<Wrapper /> renders 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          Vegan Fajitas 2
+          Vegan Fajitas 10
         </a>
       </div>
       <img
         class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
         data-testid="pin"
         height="30px"
-        src="/thumb-tack.webp"
+        src="/thumb-tack-cancel.webp"
         width="30px"
       />
     </div>

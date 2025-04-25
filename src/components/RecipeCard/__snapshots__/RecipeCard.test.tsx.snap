@@ -28,6 +28,7 @@ exports[`<RecipeCard /> as link renders 1`] = `
     </div>
     <img
       class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
+      data-testid="pin"
       height="30px"
       src="/thumb-tack.webp"
       width="30px"
@@ -64,6 +65,7 @@ exports[`<RecipeCard /> as submit button renders 1`] = `
     </div>
     <img
       class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
+      data-testid="pin"
       height="30px"
       src="/thumb-tack.webp"
       width="30px"

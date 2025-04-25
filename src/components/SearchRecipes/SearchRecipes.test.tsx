@@ -96,5 +96,4 @@ test("Recipes filter based on input", async () => {
 	const veganRecp1 = await waitFor(() => screen.queryByText("Vegan Fajitas"));
 	expect(veganRecp).not.toBeNull()
 	expect(veganRecp1).toBeNull()
-
 });

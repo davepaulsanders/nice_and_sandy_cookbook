@@ -14,7 +14,7 @@ for (let i = 0; i < 10; i++) {
 	alt:"test",
 	category:"ENTREE",
 	category_id:1,
-	is_pinned: false,
+	is_pinned: i === 0 ? false : true,
 	})
 }
 return recipes
