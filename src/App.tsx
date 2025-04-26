@@ -41,6 +41,7 @@ const App = () => {
 			<HamburgerMenu isOpen={isOpen} toggleOpen={toggleOpen} />
 			<Header />
 			<div className="mt-4 sm:mt-6 w-5/12 mx-auto border-b border-slate-200"></div>
+			<div className="container flex flex-col mx-auto">
 			<SearchRecipes
 				recipes={recipes}
 				setSearch={setSearch}
@@ -73,7 +74,7 @@ const App = () => {
 						setRecipeSearchCopy={setRecipeSearchCopy}
 					/>
 				</div>
-			)}
+			)}</div>
 		</>
 	);
 };
