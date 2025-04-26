@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Hamburger/> renders closed 1`] = `
+<div>
+  <button
+    class="false fixed flex flex-col justify-center z-[1001] items-center w-[50px] h-[50px] top-5 right-10"
+  >
+    <span
+      class="bg-lightg block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm -translate-y-0.5"
+    />
+    <span
+      class="bg-lightg block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 opacity-100"
+    >
+       
+    </span>
+    <span
+      class="bg-lightg block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm translate-y-0.5"
+    >
+       
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<Hamburger/> renders open 1`] = `
+<div>
+  <button
+    class="false fixed flex flex-col justify-center z-[1001] items-center w-[50px] h-[50px] top-5 right-10"
+  >
+    <span
+      class="bg-lightg block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm rotate-45 translate-y-1"
+    />
+    <span
+      class="bg-lightg block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 opacity-0"
+    >
+       
+    </span>
+    <span
+      class="bg-lightg block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm -rotate-45 -translate-y-1"
+    >
+       
+    </span>
+  </button>
+</div>
+`;
