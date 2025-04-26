@@ -1,6 +1,4 @@
-import useToggle from "../../hooks/useToggle"
-const HamburgerMenu = () => {
-	const { isOpen, toggleOpen } = useToggle()
+const HamburgerMenu = ({isOpen, toggleOpen}) => {
 	return (
 		<button onClick={() => toggleOpen(prev => !prev)}
 			  className="fixed flex flex-col justify-center items-center w-[20px] h-[20px] top-5 right-10">
