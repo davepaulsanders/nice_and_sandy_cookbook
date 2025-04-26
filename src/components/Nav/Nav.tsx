@@ -7,7 +7,7 @@ const Nav = ({
 }) => {
 	return (
 		<div
-			className={`${isOpen ? "opacity-1" : "opacity-0"} ml-auto sticky border z-[1000] p-0 bg-darkg top-0 w-[20rem] text-lightg text-left pb-2 pt-6`}
+			className={`${isOpen ? "opacity-1 z-[1000]" : "opacity-0 z-[-1]"} ml-auto sticky border p-0 bg-darkg top-0 w-[20rem] text-lightg text-left pb-2 pt-6`}
 		>
 			<ul className="w-[20rem]">
 				{routes.map((route) => (
