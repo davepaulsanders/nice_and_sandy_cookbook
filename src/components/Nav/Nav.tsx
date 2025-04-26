@@ -3,7 +3,7 @@ const Nav = ({
 	routes,
 }: {
 	isOpen: boolean;
-	routes: [{ label: string; path: string }];
+	routes: { label: string; path: string }[];
 }) => {
 	return (
 		<div
