@@ -37,7 +37,7 @@ const App = () => {
 	};
 	return (
 		<>
-			{isOpen && <Nav routes={routes} />}
+			<Nav isOpen={isOpen} routes={routes} />
 			<HamburgerMenu isOpen={isOpen} toggleOpen={toggleOpen} />
 			<Header />
 			<div className="mt-4 sm:mt-6 w-5/12 mx-auto border-b border-slate-200"></div>
