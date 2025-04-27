@@ -27,7 +27,7 @@ const Actions = ({ label, type, button, href, onClick }: ActionsProps) => {
 				target="_blank"
 				href={href}
 				rel="noopener noreferrer"
-				className="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
+				className="text-lightg text-md hover:underline hover:cursor-pointer"
 			>
 				{label}
 			</a>
