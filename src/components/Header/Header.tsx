@@ -1,6 +1,6 @@
 const Header = () => {
 	return (
-		<main className="flex flex-col justify-content-center items-center mt-8">
+		<main className="mt-[-3rem] flex flex-col justify-content-center items-center">
 			<h1 className="text-5xl font-bold text-lgg mb-2">Welcome</h1>
 			<h2 className="subtitle text-4xl mb-2 text-lightg">
 				to the Nice & Sandy Cookbook!

@@ -38,16 +38,16 @@ const SearchRecipes = ({
 		}
 	};
 	return (
-		<div className="flex flex-col items-center">
+		<div className="md:flex sm:flex-col md:flex-row justify-center items-center mt-4">
 			<input
 				placeholder="Search recipes"
-				className="relative rounded-md h-[3rem] w-[20rem] py-[8px] mt-4 text-xl pl-2"
+				className="relative rounded-md h-[3rem] w-[20rem] py-[8px] text-xl pl-2"
 				type="text"
 				value={searchInputVal}
 				onChange={handleInputChange}
 			/>
 			<button
-				className="mt-6 bg-tan-500 text-black rounded-md border py-2 px-8 bg-medg border-1 border-lightg"
+				className="ml-4 bg-tan-500 mt-4 md:mt-0 text-black rounded-md border py-2 px-8 bg-medg border-1 border-lightg"
 				onClick={resetRecipes}
 			>
 				Reset
