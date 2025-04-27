@@ -3,7 +3,7 @@
 exports[`<Category /> renders 1`] = `
 <div>
   <section
-    class="my-16 w-full"
+    class="w-full"
   >
     <p
       class="text-lightg font-bold text-3xl my-10 text-center"
@@ -11,7 +11,7 @@ exports[`<Category /> renders 1`] = `
       Entree
     </p>
     <div
-      class="grid gap-4 sm:grid-cols-4 sm:mx-auto"
+      class="grid gap-4 grid-cols-2 sm:grid-cols-6 sm:mx-auto"
     />
   </section>
 </div>

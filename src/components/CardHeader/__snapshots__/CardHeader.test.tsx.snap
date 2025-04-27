@@ -3,11 +3,11 @@
 exports[`<CardHeader /> renders 1`] = `
 <div>
   <div
-    class="mt-4 w-11/12"
+    class="mt-4 w-full rounded-md overflow-hidden"
   >
     <img
       alt="test"
-      class="h-[27rem] w-full object-cover"
+      class="h-[16rem] sm:h-[20rem] w-full object-cover"
       src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
     />
   </div>

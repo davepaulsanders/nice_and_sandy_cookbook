@@ -3,16 +3,16 @@
 exports[`<SearchRecipes /> renders 1`] = `
 <div>
   <div
-    class="flex flex-col items-center"
+    class="md:flex sm:flex-col md:flex-row justify-center items-center mt-4"
   >
     <input
-      class="relative rounded-md h-[3rem] w-[20rem] py-[8px] mt-4 text-xl pl-2"
+      class="relative rounded-md h-[3rem] w-[20rem] py-[8px] text-xl pl-2"
       placeholder="Search recipes"
       type="text"
       value=""
     />
     <button
-      class="mt-6 bg-tan-500 text-black rounded-md border py-2 px-8 bg-medg border-1 border-lightg"
+      class="md:ml-4 bg-tan-500 mt-4 md:mt-0 text-black rounded-md border py-2 px-8 bg-medg border-1 border-lightg"
     >
       Reset
     </button>
