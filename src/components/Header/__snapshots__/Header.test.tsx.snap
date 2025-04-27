@@ -3,7 +3,7 @@
 exports[`<Header /> renders 1`] = `
 <div>
   <main
-    class="flex flex-col justify-content-center items-center mt-8"
+    class="mt-[-3rem] flex flex-col justify-content-center items-center"
   >
     <h1
       class="text-5xl font-bold text-lgg mb-2"

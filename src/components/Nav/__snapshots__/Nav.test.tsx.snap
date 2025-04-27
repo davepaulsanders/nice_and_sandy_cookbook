@@ -3,7 +3,7 @@
 exports[`<Nav /> renders closed 1`] = `
 <div>
   <div
-    class="opacity-0 ml-auto sticky border z-[1000] p-0 bg-darkg top-0 w-[20rem] text-lightg text-left pb-2 pt-6"
+    class="opacity-0 z-[-1] ml-auto sticky border p-0 bg-darkg top-0 w-[20rem] text-lightg text-left pb-2 pt-6"
   >
     <ul
       class="w-[20rem]"
@@ -38,7 +38,7 @@ exports[`<Nav /> renders closed 1`] = `
 exports[`<Nav /> renders open 1`] = `
 <div>
   <div
-    class="opacity-1 ml-auto sticky border z-[1000] p-0 bg-darkg top-0 w-[20rem] text-lightg text-left pb-2 pt-6"
+    class="opacity-1 z-[1000] ml-auto sticky border p-0 bg-darkg top-0 w-[20rem] text-lightg text-left pb-2 pt-6"
   >
     <ul
       class="w-[20rem]"

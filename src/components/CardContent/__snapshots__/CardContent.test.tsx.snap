@@ -3,16 +3,13 @@
 exports[`<CardContent /> renders 1`] = `
 <div>
   <div
-    class="m-4"
+    class="m-2"
   >
-    <a
-      class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-      href="https://www.feastingathome.com/vegan-fajitas/"
-      rel="noopener noreferrer"
-      target="_blank"
+    <p
+      class="text-lightg text-md"
     >
       Vegan Fajitas 1
-    </a>
+    </p>
   </div>
 </div>
 `;

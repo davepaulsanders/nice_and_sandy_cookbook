@@ -3,7 +3,7 @@
 exports[`<PinnedRecipes /> renders 1`] = `
 <div>
   <div
-    class="w-full flex flex-col justify-center mx-auto"
+    class="w-full mx-auto"
   >
     <p
       class="text-lightg font-bold text-3xl text-center my-10"
@@ -11,328 +11,348 @@ exports[`<PinnedRecipes /> renders 1`] = `
       PINNED RECIPES
     </p>
     <div
-      class="grid gap-4 sm:grid-cols-4 sm:mx-auto"
+      class="grid gap-4 grid-cols-2 sm:grid-cols-6 sm:mx-auto"
     >
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 1
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 1
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 2
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 2
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 3
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 3
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 4
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 4
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 5
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 5
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 6
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 6
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 7
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 7
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 8
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 8
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 9
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 9
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
-      <div
-        class="relative bg-lightg flex flex-col justify-content-center \\   items-center shadow-lg rounded-xl"
+      </a>
+      <a
+        href="https://www.feastingathome.com/vegan-fajitas/"
+        target="blank"
       >
         <div
-          class="mt-4 w-11/12"
+          class="cursor-pointer relative flex flex-col justify-content-center \\   items-center "
         >
+          <div
+            class="mt-4 w-full rounded-md overflow-hidden"
+          >
+            <img
+              alt="test"
+              class="h-[16rem] sm:h-[20rem] w-full object-cover"
+              src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            />
+          </div>
+          <div
+            class="m-2"
+          >
+            <p
+              class="text-lightg text-md"
+            >
+              Vegan Fajitas 10
+            </p>
+          </div>
           <img
-            alt="test"
-            class="h-[27rem] w-full object-cover"
-            src="https://www.feastingathome.com/wp-content/uploads/2024/10/Vegan-Fajitas-13.jpg"
+            class="absolute top-5 right-1 hover:scale-125 hover:cursor-pointer"
+            data-testid="pin"
+            height="30px"
+            src="/thumb-tack-cancel.webp"
+            width="30px"
           />
         </div>
-        <div
-          class="m-4"
-        >
-          <a
-            class="text-xl hover:underline hover:cursor-pointer whitespace-nowrap"
-            href="https://www.feastingathome.com/vegan-fajitas/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Vegan Fajitas 10
-          </a>
-        </div>
-        <img
-          class="absolute top-5 right-5 hover:scale-125 hover:cursor-pointer"
-          data-testid="pin"
-          height="30px"
-          src="/thumb-tack-cancel.webp"
-          width="30px"
-        />
-      </div>
+      </a>
     </div>
   </div>
 </div>
