@@ -12,6 +12,7 @@ import PinnedRecipes from "./components/PinnedRecipes/PinnedRecipes";
 import HamburgerMenu from "./components/Hamburger/Hamburger";
 import { routes } from "./routes";
 const App = () => {
+	window.scrollTo(0, 0);
 	const [recipes, setRecipes] = useState<Recipe[]>([]);
 	const [categories, setCategories] = useState<CategoryType[]>([]);
 	// Copied recipes for searching
@@ -42,39 +43,41 @@ const App = () => {
 			<Header />
 			<div className="mt-4 sm:mt-6 w-5/12 mx-auto border-b border-slate-200"></div>
 			<div className="container p-4 sm:p-0 flex flex-col mx-auto">
-			<SearchRecipes
-				recipes={recipes}
-				setSearch={setSearch}
-				setRecipeSearchCopy={setRecipeSearchCopy}
-			/>
-			{!search ? (
-				<>
-					<PinnedRecipes
-						recipes={recipes}
-						pinnedRecipes={pinnedRecipes}
-						setRecipes={setRecipes}
-					/>
-
-					{categories &&
-						recipes &&
-						categories.map((category) => (
-							<Category
-								key={category.id || category.category}
-								category={category.category}
+				<SearchRecipes
+					recipes={recipes}
+					setSearch={setSearch}
+					setRecipeSearchCopy={setRecipeSearchCopy}
+				/>
+				{!search ? (
+					<>
+						{pinnedRecipes.length > 0 && (
+							<PinnedRecipes
 								recipes={recipes}
+								pinnedRecipes={pinnedRecipes}
 								setRecipes={setRecipes}
 							/>
-						))}
-				</>
-			) : (
-				<div className="mt-4">
-					<SearchResults
-						recipeSearchCopy={recipeSearchCopy}
-						setRecipes={setRecipes}
-						setRecipeSearchCopy={setRecipeSearchCopy}
-					/>
-				</div>
-			)}</div>
+						)}
+						{categories &&
+							recipes &&
+							categories.map((category) => (
+								<Category
+									key={category.id || category.category}
+									category={category.category}
+									recipes={recipes}
+									setRecipes={setRecipes}
+								/>
+							))}
+					</>
+				) : (
+					<div className="mt-4">
+						<SearchResults
+							recipeSearchCopy={recipeSearchCopy}
+							setRecipes={setRecipes}
+							setRecipeSearchCopy={setRecipeSearchCopy}
+						/>
+					</div>
+				)}
+			</div>
 		</>
 	);
 };

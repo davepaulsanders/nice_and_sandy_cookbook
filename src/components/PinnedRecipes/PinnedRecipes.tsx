@@ -12,11 +12,10 @@ const PinnedRecipes = ({
 	setRecipes,
 }: PinnedRecipesProps) => {
 	return (
-		<div className="w-full flex flex-col justify-center mx-auto">
+		<div className="w-full mx-auto">
 			<p className="text-lightg font-bold text-3xl text-center my-10">
 				PINNED RECIPES
 			</p>
-			{pinnedRecipes.length > 0 ? (
 				<Wrapper>
 					{pinnedRecipes.map((recp) => (
 						<RecipeCard
@@ -27,9 +26,6 @@ const PinnedRecipes = ({
 						/>
 					))}
 				</Wrapper>
-			) : (
-				<p className="text-medg">No pinned recipes :(</p>
-			)}
 		</div>
 	);
 };

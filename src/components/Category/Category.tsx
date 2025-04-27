@@ -8,7 +8,7 @@ interface CategoryProps {
 }
 const Category = ({ category, recipes, setRecipes }: CategoryProps) => {
 	return (
-		<section className="my-16 w-full">
+		<section className="w-full">
 			<p className="text-lightg font-bold text-3xl my-10 text-center">
 				{category}
 			</p>
