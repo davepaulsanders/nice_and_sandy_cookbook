@@ -12,7 +12,6 @@ import PinnedRecipes from "./components/PinnedRecipes/PinnedRecipes";
 import HamburgerMenu from "./components/Hamburger/Hamburger";
 import { routes } from "./routes";
 const App = () => {
-	window.scrollTo(0, 0);
 	const [recipes, setRecipes] = useState<Recipe[]>([]);
 	const [categories, setCategories] = useState<CategoryType[]>([]);
 	// Copied recipes for searching
@@ -23,6 +22,7 @@ const App = () => {
 		getRecipes();
 		getCategories();
 	}, []);
+	console.log("RENDER")
 
 	const { isOpen, toggleOpen } = useToggle();
 	const pinnedRecipes = recipes.filter((recp) => recp.is_pinned === true);
