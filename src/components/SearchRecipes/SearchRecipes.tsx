@@ -47,7 +47,7 @@ const SearchRecipes = ({
 				onChange={handleInputChange}
 			/>
 			<button
-				className="ml-4 bg-tan-500 mt-4 md:mt-0 text-black rounded-md border py-2 px-8 bg-medg border-1 border-lightg"
+				className="md:ml-4 bg-tan-500 mt-4 md:mt-0 text-black rounded-md border py-2 px-8 bg-medg border-1 border-lightg"
 				onClick={resetRecipes}
 			>
 				Reset
