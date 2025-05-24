@@ -10,13 +10,16 @@ services:
       - "5173:5173"
     volumes:
       - ./:/app
+      - /app/node_modules
     networks:
       - test_network
   backend:
     build:
       context: ./backend
+      target: builder
     container_name: go-recipes
     image: go-recipes
+    command: air
     ports:
       - "8080:8080"
     #volumes:
