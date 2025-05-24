@@ -12,6 +12,7 @@ services:
   backend:
     container_name: go-recipes
     image: davepsandy/go-recipes:latest 
+    command: ./go-recipes
     ports:
       - "8080"
     networks:
