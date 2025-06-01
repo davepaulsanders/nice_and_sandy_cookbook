@@ -239,6 +239,12 @@ func (r *RouteHandler) addRecipe(c *gin.Context) {
 								tmpImage.Img = attr.Val
 							}
 						}
+						if attr.Val[0] == '/' {
+							combineHostNameWithRootPath := fmt.Sprintf("https://%s%s", hostname, attr.Val)
+							if !seen[combineHostNameWithRootPath] {
+								tmpImage.Img = combineHostNameWithRootPath
+							}
+						}
 					}
 				}
 				if tmpImage.Alt == "" {
