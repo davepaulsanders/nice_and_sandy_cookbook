@@ -22,8 +22,8 @@ services:
     command: air
     ports:
       - "8080:8080"
-    #volumes:
-      #- ./backend/recipes.db:/app/recipes.db
+    volumes:
+      - ./backend:/app
     networks:
       - test_network
 networks:
