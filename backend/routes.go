@@ -183,25 +183,40 @@ func (r *RouteHandler) addRecipe(c *gin.Context) {
 
 	tokenizer := html.NewTokenizer(resp.Body)
 	var imageList []Image
-	var title string
+	var pageTitle string
+	var metaTitle string
 	seen := make(map[string]bool)
 	for {
 		tt := tokenizer.Next()
 		switch tt {
 		case html.ErrorToken:
+			possibleTitles := []string{pageTitle, metaTitle}
 			if len(imageList) > 0 {
-				c.JSON(200, gin.H{"images": imageList, "label": title, "href": body.URL})
+				c.JSON(200, gin.H{"images": imageList, "label": possibleTitles, "href": body.URL})
 			} else {
-				c.JSON(200, gin.H{"images": nil, "label": title, "href": body.URL})
+				c.JSON(200, gin.H{"images": nil, "label": possibleTitles, "href": body.URL})
 			}
 			return
-
 		case html.StartTagToken, html.SelfClosingTagToken:
 			t := tokenizer.Token()
 			if t.Data == "title" {
 				tt = tokenizer.Next()
 				if tt == html.TextToken {
-					title = strings.TrimSpace(tokenizer.Token().Data)
+					pageTitle = strings.TrimSpace(string(tokenizer.Text()))
+				}
+			}
+			if t.Data == "meta" && metaTitle == "" {
+				var property, content string
+				for _, attr := range t.Attr {
+					if attr.Key == "property" && attr.Val == "og:title" {
+						property = attr.Val
+					}
+					if attr.Key == "content" {
+						content = attr.Val
+					}
+				}
+				if property == "og:title" {
+					metaTitle = strings.TrimSpace(content)
 				}
 			}
 			if t.Data == "img" {
@@ -226,7 +241,10 @@ func (r *RouteHandler) addRecipe(c *gin.Context) {
 						}
 					}
 				}
-				if tmpImage.Alt != "" && tmpImage.Img != "" {
+				if tmpImage.Alt == "" {
+					tmpImage.Alt = ""
+				}
+				if tmpImage.Img != "" {
 					imageList = append(imageList, Image{Img: tmpImage.Img, Alt: tmpImage.Alt})
 				}
 			}
