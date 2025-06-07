@@ -44,7 +44,7 @@ func main() {
 	v1.GET("/favicon.ico", handler.faviconNoContent)
 	v1.GET("/categories", handler.categories)
 	v1.GET("/recipes", handler.recipes)
-	v1.POST("/recipes", handler.addRecipe)
+	v1.POST("/recipes/parse-url", handler.parseUrl)
 	v1.GET("/recipes/pinned", handler.pinnedRecipes)
 	v1.PATCH("/recipes/pinned/:id", handler.togglePinnedRecipes)
 	r.Run()

@@ -2,42 +2,15 @@ package main
 
 import (
 	"database/sql"
-	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	_ "github.com/mattn/go-sqlite3"
-	"golang.org/x/net/html"
 	"log"
 	"net/http"
-	"net/url"
-	"strings"
+	models "recipes-backend/db"
+	rp "recipes-backend/recipeparser"
 )
 
-type customNull struct {
-	sql.NullString
-}
-
-func (s *customNull) MarshalJSON() ([]byte, error) {
-	if s.Valid {
-		return json.Marshal(s.String)
-	}
-	return json.Marshal("")
-}
-
-type Image struct {
-	Img string
-	Alt string
-}
-type Recipe struct {
-	Id         int        `json:"id"`
-	Img        customNull `json:"img"`
-	Href       customNull `json:"href"`
-	Label      string     `json:"label"`
-	Alt        string     `json:"alt"`
-	CategoryId int        `json:"category_id"`
-	IsPinned   bool       `json:"is_pinned"`
-	Category   *string    `json:"category"`
-}
 type RouteHandler struct {
 	DB *sql.DB
 }
@@ -84,14 +57,14 @@ func (r *RouteHandler) categories(c *gin.Context) {
 }
 
 func (r *RouteHandler) recipes(c *gin.Context) {
-	var recipes []Recipe
+	var recipes []models.Recipe
 	resp, err := r.DB.Query("SELECT a.*, b.category FROM recipes as a join categories as b on a.category_id = b.id;")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, err)
 	}
 	defer resp.Close()
 	for resp.Next() {
-		var recipe Recipe
+		var recipe models.Recipe
 		if err := resp.Scan(&recipe.Id, &recipe.Img, &recipe.Href, &recipe.Label, &recipe.Alt, &recipe.CategoryId, &recipe.IsPinned, &recipe.Category); err != nil {
 			log.Fatal(err)
 		}
@@ -102,14 +75,14 @@ func (r *RouteHandler) recipes(c *gin.Context) {
 	})
 }
 func (r *RouteHandler) pinnedRecipes(c *gin.Context) {
-	var recipes []Recipe
+	var recipes []models.Recipe
 	resp, err := r.DB.Query("SELECT * FROM recipes WHERE is_pinned = true;")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, err)
 	}
 	defer resp.Close()
 	for resp.Next() {
-		var recipe Recipe
+		var recipe models.Recipe
 		if err := resp.Scan(&recipe.Id, &recipe.Img, &recipe.Href, &recipe.Label, &recipe.Alt, &recipe.CategoryId, &recipe.IsPinned); err != nil {
 			log.Fatal(err)
 		}
@@ -121,7 +94,6 @@ func (r *RouteHandler) pinnedRecipes(c *gin.Context) {
 
 }
 func (r *RouteHandler) togglePinnedRecipes(c *gin.Context) {
-	//var recipes []Recipe
 	id := c.Param("id")
 	resp, err := r.DB.Exec("UPDATE recipes SET is_pinned = NOT is_pinned WHERE id = ?", id)
 	if err != nil {
@@ -141,7 +113,7 @@ func (r *RouteHandler) togglePinnedRecipes(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, err)
 	}
 	defer grabRow.Close()
-	var recipe Recipe
+	var recipe models.Recipe
 	for grabRow.Next() {
 		if err := grabRow.Scan(&recipe.Id, &recipe.Img, &recipe.Href, &recipe.Label, &recipe.Alt, &recipe.CategoryId, &recipe.IsPinned); err != nil {
 			log.Fatal(err)
@@ -151,7 +123,8 @@ func (r *RouteHandler) togglePinnedRecipes(c *gin.Context) {
 		"updated_recipe": recipe,
 	})
 }
-func (r *RouteHandler) addRecipe(c *gin.Context) {
+
+func (r *RouteHandler) parseUrl(c *gin.Context) {
 	var body struct {
 		URL string `json:"url"`
 	}
@@ -159,12 +132,13 @@ func (r *RouteHandler) addRecipe(c *gin.Context) {
 		c.JSON(400, gin.H{"error": err.Error()})
 		return
 	}
-	parsed, err := url.Parse(body.URL)
+
+	parser := &rp.RecipeParser{URL: body.URL}
+
+	_, err := parser.ParseHostName()
 	if err != nil {
 		c.JSON(400, gin.H{"error": err.Error()})
-		return
 	}
-	hostname := parsed.Hostname()
 	client := &http.Client{}
 
 	req, err := http.NewRequest("GET", body.URL, nil)
@@ -180,81 +154,11 @@ func (r *RouteHandler) addRecipe(c *gin.Context) {
 		return
 	}
 	defer resp.Body.Close()
-
-	tokenizer := html.NewTokenizer(resp.Body)
-	var imageList []Image
-	var pageTitle string
-	var metaTitle string
-	seen := make(map[string]bool)
-	for {
-		tt := tokenizer.Next()
-		switch tt {
-		case html.ErrorToken:
-			possibleTitles := []string{pageTitle, metaTitle}
-			if len(imageList) > 0 {
-				c.JSON(200, gin.H{"images": imageList, "label": possibleTitles, "href": body.URL})
-			} else {
-				c.JSON(200, gin.H{"images": nil, "label": possibleTitles, "href": body.URL})
-			}
-			return
-		case html.StartTagToken, html.SelfClosingTagToken:
-			t := tokenizer.Token()
-			if t.Data == "title" {
-				tt = tokenizer.Next()
-				if tt == html.TextToken {
-					pageTitle = strings.TrimSpace(string(tokenizer.Text()))
-				}
-			}
-			if t.Data == "meta" && metaTitle == "" {
-				var property, content string
-				for _, attr := range t.Attr {
-					if attr.Key == "property" && attr.Val == "og:title" {
-						property = attr.Val
-					}
-					if attr.Key == "content" {
-						content = attr.Val
-					}
-				}
-				if property == "og:title" {
-					metaTitle = strings.TrimSpace(content)
-				}
-			}
-			if t.Data == "img" {
-				var tmpImage Image
-				// Look for the 'src' attribute
-				for _, attr := range t.Attr {
-					if attr.Key == "alt" {
-						tmpImage.Alt = attr.Val
-					}
-					if attr.Key == "src" {
-						parsed, err := url.Parse(attr.Val)
-						if err != nil {
-							c.JSON(400, gin.H{"error": err.Error()})
-							return
-						}
-						imageHostName := parsed.Hostname()
-						if hostname == imageHostName {
-							if !seen[attr.Val] {
-								seen[attr.Val] = true
-								tmpImage.Img = attr.Val
-							}
-						}
-						if attr.Val[0] == '/' {
-							combineHostNameWithRootPath := fmt.Sprintf("https://%s%s", hostname, attr.Val)
-							if !seen[combineHostNameWithRootPath] {
-								tmpImage.Img = combineHostNameWithRootPath
-							}
-						}
-					}
-				}
-				if tmpImage.Alt == "" {
-					tmpImage.Alt = ""
-				}
-				if tmpImage.Img != "" {
-					imageList = append(imageList, Image{Img: tmpImage.Img, Alt: tmpImage.Alt})
-				}
-			}
-		}
+	parsedRecipe, err := parser.ParseData(resp.Body)
+	if err != nil {
+		c.JSON(400, gin.H{"error": err.Error()})
+		return
 	}
-
+	c.JSON(200, parsedRecipe)
+	return
 }
