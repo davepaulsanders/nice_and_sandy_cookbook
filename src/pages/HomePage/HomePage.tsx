@@ -20,12 +20,16 @@ const HomePage = () => {
 
   const pinnedRecipes = recipes.filter((recp) => recp.is_pinned === true);
   const getRecipes = async () => {
-    const { recipes: recipeList } = await fetchData("../v1/recipes");
+    const { recipes: recipeList } = await fetchData<{ recipes: Recipe[] }>(
+      "../v1/recipes"
+    );
     setRecipes(recipeList);
     setRecipeSearchCopy(recipeList);
   };
   const getCategories = async () => {
-    const { categories: categoriesList } = await fetchData("../v1/categories");
+    const { categories: categoriesList } = await fetchData<{
+      categories: CategoryType[];
+    }>("../v1/categories");
     setCategories(categoriesList);
   };
   return (
