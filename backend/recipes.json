@@ -302,6 +302,29 @@
     "img": "https://mindfulnessisbliss.weebly.com/uploads/5/3/1/3/53136527/2385070_orig.jpg",
     "href": "https://mindfulnessisbliss.weebly.com/blog/oh-she-glows-chia-power-donuts",
     "is_pinned": false
+  },
+  {
+    "category": "SALAD",
+    "label": "Southwestern Kale Power Salad",
+    "alt": "Southwestern Kale Power Salad",
+    "img": "https://cookieandkate.com/images/2024/01/southwestern-kale-power-salad-recipe.jpg",
+    "href": "https://cookieandkate.com/southwestern-kale-power-salad/print/23770/",
+    "is_pinned": false
+  },
+  {
+    "category": "ENTREE",
+    "label": "Sticky Glazed Tofu Bowl",
+    "alt": "Sticky Glazed Tofu Bowl",
+    "img": "https://www.feastingathome.com/wp-content/uploads/2024/12/Tofu-Bowl_-20.jpg",
+    "href": "https://www.feastingathome.com/tofu-bowl/print/84603/",
+    "is_pinned": false
+  },
+  {
+    "category": "ENTREE",
+    "label": "Creamy Orzo Chicken",
+    "alt": "Creamy Orzo Chicken",
+    "img": "https://www.feastingathome.com/wp-content/uploads/2022/04/Creamy-Orzo-Chicken-12-1024x1536.jpg",
+    "href": "https://www.feastingathome.com/creamy-orzo-chicken/print/52221/",
+    "is_pinned": false
   }
 ]
-
