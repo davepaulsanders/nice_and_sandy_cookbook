@@ -334,5 +334,29 @@
     "img": "https://www.feastingathome.com/wp-content/uploads/2022/04/Creamy-Orzo-Chicken-12-1024x1536.jpg",
     "href": "https://www.feastingathome.com/creamy-orzo-chicken/print/52221/",
     "is_pinned": false
+  },
+  {
+    "category": "SOUP",
+    "label": "White Bean Soup",
+    "alt": "White Bean Soup",
+    "img": "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_730,h_913/k%2FPhoto%2FRecipes%2F2024-04-navy-bean-soup%2Fnavy-bean-soup-33",
+    "href": "https://www.thekitchn.com/navy-bean-soup-recipe-23218210#post-recipe-293420409",
+    "is_pinned": false
+  },
+  {
+    "category": "ENTREE",
+    "label": "Lo Mein Noodles",
+    "alt": "Lo Mein Noodles",
+    "img": "https://www.feastingathome.com/wp-content/uploads/2019/11/lo-mein_-9.jpg",
+    "href": "https://www.feastingathome.com/lo-mein/print/31860/",
+    "is_pinned": false
+  },
+  {
+    "category": "ENTREE",
+    "label": "Red Beans and Rice",
+    "alt": "Red Beans and Rice",
+    "img": "https://www.allrecipes.com/thmb/wqh7a7QRqw-C1M2LBHODzBRPB-g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/58211-Authentic-Louisiana-Red-Beans-And-Rice-mfs-119-d0e0d9b700be467395da252e74921e87.jpg",
+    "href": "https://www.allrecipes.com/recipe/58211/authentic-louisiana-red-beans-and-rice/?print=",
+    "is_pinned": false
   }
 ]
