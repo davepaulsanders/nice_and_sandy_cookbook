@@ -312,14 +312,6 @@
     "is_pinned": false
   },
   {
-    "category": "SALAD",
-    "label": "Southwestern Kale Power Salad",
-    "alt": "Southwestern Kale Power Salad",
-    "img": "https://cookieandkate.com/images/2024/01/southwestern-kale-power-salad-recipe.jpg",
-    "href": "https://cookieandkate.com/southwestern-kale-power-salad/print/23770/",
-    "is_pinned": false
-  },
-  {
     "category": "ENTREE",
     "label": "Sticky Glazed Tofu Bowl",
     "alt": "Sticky Glazed Tofu Bowl",
@@ -365,6 +357,14 @@
     "alt": "Best Vegan Lasagna",
     "img": "https://cookieandkate.com/images/2020/02/vegan-lasagna-recipe-1.jpg",
     "href": "https://cookieandkate.com/best-vegan-lasagna-recipe/print/35496/",
+    "is_pinned": false
+  },
+  {
+    "category": "SALAD",
+    "label": "Spring Orzo Pasta Salad",
+    "alt": "Spring Orzo Pasta Salad",
+    "img": "https://broccyourbody.com/wp-content/uploads/2023/03/IMG_0378-1-scaled.jpeg",
+    "href": "https://broccyourbody.com/spring-orzo-pasta-salad-with-crispy-shallot-vinaigrette/",
     "is_pinned": false
   }
 ]
