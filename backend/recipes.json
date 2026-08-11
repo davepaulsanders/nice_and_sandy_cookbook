@@ -192,6 +192,14 @@
     "is_pinned": false
   },
   {
+    "category": "ENTREE",
+    "label": "Burger Bowls",
+    "alt": "Burger Bowls",
+    "img": "https://broccyourbody.com/wp-content/uploads/2025/12/IMG_0969-scaled.jpeg",
+    "href": "https://broccyourbody.com/burger-bowls-with-special-sauce/#recipe-card",
+    "is_pinned": false
+  },
+  {
     "category": "LUNCH",
     "label": "Chickpea salad",
     "alt": "Chickpea salad",
@@ -365,6 +373,14 @@
     "alt": "Spring Orzo Pasta Salad",
     "img": "https://broccyourbody.com/wp-content/uploads/2023/03/IMG_0378-1-scaled.jpeg",
     "href": "https://broccyourbody.com/spring-orzo-pasta-salad-with-crispy-shallot-vinaigrette/",
+    "is_pinned": false
+  },
+  {
+    "category": "ENTREE",
+    "label": "Spring Orzo Salad",
+    "alt": "Spring Orzo Salad",
+    "img": "https://broccyourbody.com/wp-content/uploads/2023/07/IMG_0376-scaled.jpeg",
+    "href": "https://broccyourbody.com/spring-orzo-pasta-salad-with-crispy-shallot-vinaigrette/#recipe-card",
     "is_pinned": false
   }
 ]
