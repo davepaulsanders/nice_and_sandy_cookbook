@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN npm i -g pnpm
+RUN npm i -g pnpm@10
 RUN pnpm i
 COPY . .
 CMD [""]
